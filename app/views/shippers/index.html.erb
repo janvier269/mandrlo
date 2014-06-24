@@ -1,0 +1,89 @@
+<h1>Listing shippers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shipco</th>
+      <th>Addr1</th>
+      <th>Add2</th>
+      <th>City</th>
+      <th>Zip</th>
+      <th>Area</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Services</th>
+      <th>Oth aes</th>
+      <th>Oth ins</th>
+      <th>Oth brok</th>
+      <th>Oth impo</th>
+      <th>Inventory</th>
+      <th>Oth pur</th>
+      <th>Oth repa</th>
+      <th>Oth ware</th>
+      <th>Pay cash</th>
+      <th>Pay chk</th>
+      <th>Pay debcrd</th>
+      <th>Paypal</th>
+      <th>Phon1</th>
+      <th>Phon2</th>
+      <th>Pers1</th>
+      <th>Pers2</th>
+      <th>Long</th>
+      <th>Altitud</th>
+      <th>Email</th>
+      <th>Other</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shippers.each do |shipper| %>
+      <tr>
+        <td><%= shipper.shipco %></td>
+        <td><%= shipper.addr1 %></td>
+        <td><%= shipper.add2 %></td>
+        <td><%= shipper.city %></td>
+        <td><%= shipper.zip %></td>
+        <td><%= shipper.area %></td>
+        <td><%= shipper.monday %></td>
+        <td><%= shipper.tuesday %></td>
+        <td><%= shipper.wednesday %></td>
+        <td><%= shipper.thursday %></td>
+        <td><%= shipper.friday %></td>
+        <td><%= shipper.saturday %></td>
+        <td><%= shipper.services %></td>
+        <td><%= shipper.oth_aes %></td>
+        <td><%= shipper.oth_ins %></td>
+        <td><%= shipper.oth_brok %></td>
+        <td><%= shipper.oth_impo %></td>
+        <td><%= shipper.inventory %></td>
+        <td><%= shipper.oth_pur %></td>
+        <td><%= shipper.oth_repa %></td>
+        <td><%= shipper.oth_ware %></td>
+        <td><%= shipper.pay_cash %></td>
+        <td><%= shipper.pay_chk %></td>
+        <td><%= shipper.pay_debCrd %></td>
+        <td><%= shipper.paypal %></td>
+        <td><%= shipper.phon1 %></td>
+        <td><%= shipper.phon2 %></td>
+        <td><%= shipper.pers1 %></td>
+        <td><%= shipper.pers2 %></td>
+        <td><%= shipper.long %></td>
+        <td><%= shipper.altitud %></td>
+        <td><%= shipper.email %></td>
+        <td><%= shipper.other %></td>
+        <td><%= link_to 'Show', shipper %></td>
+        <td><%= link_to 'Edit', edit_shipper_path(shipper) %></td>
+        <td><%= link_to 'Destroy', shipper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shipper', new_shipper_path %>

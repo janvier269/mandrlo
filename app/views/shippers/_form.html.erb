@@ -1,0 +1,149 @@
+<%= form_for(@shipper) do |f| %>
+  <% if @shipper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shipper.errors.count, "error") %> prohibited this shipper from being saved:</h2>
+
+      <ul>
+      <% @shipper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shipco %><br>
+    <%= f.text_field :shipco %>
+  </div>
+  <div class="field">
+    <%= f.label :addr1 %><br>
+    <%= f.text_field :addr1 %>
+  </div>
+  <div class="field">
+    <%= f.label :add2 %><br>
+    <%= f.text_field :add2 %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br>
+    <%= f.number_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :monday %><br>
+    <%= f.text_field :monday %>
+  </div>
+  <div class="field">
+    <%= f.label :tuesday %><br>
+    <%= f.text_field :tuesday %>
+  </div>
+  <div class="field">
+    <%= f.label :wednesday %><br>
+    <%= f.text_field :wednesday %>
+  </div>
+  <div class="field">
+    <%= f.label :thursday %><br>
+    <%= f.text_field :thursday %>
+  </div>
+  <div class="field">
+    <%= f.label :friday %><br>
+    <%= f.text_field :friday %>
+  </div>
+  <div class="field">
+    <%= f.label :saturday %><br>
+    <%= f.text_field :saturday %>
+  </div>
+  <div class="field">
+    <%= f.label :services_id %><br>
+    <%= f.text_field :services_id %>
+  </div>
+  <div class="field">
+    <%= f.label :oth_aes %><br>
+    <%= f.check_box :oth_aes %>
+  </div>
+  <div class="field">
+    <%= f.label :oth_ins %><br>
+    <%= f.check_box :oth_ins %>
+  </div>
+  <div class="field">
+    <%= f.label :oth_brok %><br>
+    <%= f.check_box :oth_brok %>
+  </div>
+  <div class="field">
+    <%= f.label :oth_impo %><br>
+    <%= f.text_field :oth_impo %>
+  </div>
+  <div class="field">
+    <%= f.label :inventory %><br>
+    <%= f.check_box :inventory %>
+  </div>
+  <div class="field">
+    <%= f.label :oth_pur %><br>
+    <%= f.check_box :oth_pur %>
+  </div>
+  <div class="field">
+    <%= f.label :oth_repa %><br>
+    <%= f.check_box :oth_repa %>
+  </div>
+  <div class="field">
+    <%= f.label :oth_ware %><br>
+    <%= f.check_box :oth_ware %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_cash %><br>
+    <%= f.check_box :pay_cash %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_chk %><br>
+    <%= f.check_box :pay_chk %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_debCrd %><br>
+    <%= f.check_box :pay_debCrd %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal %><br>
+    <%= f.check_box :paypal %>
+  </div>
+  <div class="field">
+    <%= f.label :phon1 %><br>
+    <%= f.number_field :phon1 %>
+  </div>
+  <div class="field">
+    <%= f.label :phon2 %><br>
+    <%= f.number_field :phon2 %>
+  </div>
+  <div class="field">
+    <%= f.label :pers1 %><br>
+    <%= f.text_field :pers1 %>
+  </div>
+  <div class="field">
+    <%= f.label :pers2 %><br>
+    <%= f.text_field :pers2 %>
+  </div>
+  <div class="field">
+    <%= f.label :long %><br>
+    <%= f.text_field :long %>
+  </div>
+  <div class="field">
+    <%= f.label :altitud %><br>
+    <%= f.text_field :altitud %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :other %><br>
+    <%= f.text_field :other %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

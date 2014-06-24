@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dest_id_id: 
+  shipco_id_id: 
+  air_price: 9.99
+  sea_price: 9.99
+  national: false
+  other: false
+
+two:
+  dest_id_id: 
+  shipco_id_id: 
+  air_price: 9.99
+  sea_price: 9.99
+  national: false
+  other: false

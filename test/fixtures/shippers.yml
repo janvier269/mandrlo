@@ -1,0 +1,71 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipco: MyString
+  addr1: MyString
+  add2: MyString
+  city: MyString
+  zip: 1
+  area: MyString
+  monday: MyString
+  tuesday: MyString
+  wednesday: MyString
+  thursday: MyString
+  friday: MyString
+  saturday: MyString
+  services_id: 
+  oth_aes: false
+  oth_ins: false
+  oth_brok: false
+  oth_impo: MyString
+  inventory: false
+  oth_pur: false
+  oth_repa: false
+  oth_ware: false
+  pay_cash: false
+  pay_chk: false
+  pay_debCrd: false
+  paypal: false
+  phon1: 1
+  phon2: 1
+  pers1: MyString
+  pers2: MyString
+  long: MyString
+  altitud: MyString
+  email: MyString
+  other: MyString
+
+two:
+  shipco: MyString
+  addr1: MyString
+  add2: MyString
+  city: MyString
+  zip: 1
+  area: MyString
+  monday: MyString
+  tuesday: MyString
+  wednesday: MyString
+  thursday: MyString
+  friday: MyString
+  saturday: MyString
+  services_id: 
+  oth_aes: false
+  oth_ins: false
+  oth_brok: false
+  oth_impo: MyString
+  inventory: false
+  oth_pur: false
+  oth_repa: false
+  oth_ware: false
+  pay_cash: false
+  pay_chk: false
+  pay_debCrd: false
+  paypal: false
+  phon1: 1
+  phon2: 1
+  pers1: MyString
+  pers2: MyString
+  long: MyString
+  altitud: MyString
+  email: MyString
+  other: MyString
