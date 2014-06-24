@@ -13,7 +13,6 @@ class CreateShippers < ActiveRecord::Migration
       t.string :thursday
       t.string :friday
       t.string :saturday
-      t.references :services, index: true
       t.boolean :oth_aes
       t.boolean :oth_ins
       t.boolean :oth_brok
@@ -26,8 +25,8 @@ class CreateShippers < ActiveRecord::Migration
       t.boolean :pay_chk
       t.boolean :pay_debCrd
       t.boolean :paypal
-      t.integer :phon1
-      t.integer :phon2
+      t.string :phon1
+      t.string :phon2
       t.string :pers1
       t.string :pers2
       t.string :long

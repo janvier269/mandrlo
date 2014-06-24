@@ -18,7 +18,7 @@ class ServicesControllerTest < ActionController::TestCase
 
   test "should create service" do
     assert_difference('Service.count') do
-      post :create, service: { air_price: @service.air_price, dest_id_id: @service.dest_id_id, national: @service.national, other: @service.other, sea_price: @service.sea_price, shipco_id_id: @service.shipco_id_id }
+      post :create, service: { air_price: @service.air_price, dest_id_id: @service.destination_id, national: @service.national, other: @service.other, sea_price: @service.sea_price, shipper_id: @service.shipper_id }
     end
 
     assert_redirected_to service_path(assigns(:service))
@@ -35,7 +35,7 @@ class ServicesControllerTest < ActionController::TestCase
   end
 
   test "should update service" do
-    patch :update, id: @service, service: { air_price: @service.air_price, dest_id_id: @service.dest_id_id, national: @service.national, other: @service.other, sea_price: @service.sea_price, shipco_id_id: @service.shipco_id_id }
+    patch :update, id: @service, service: { air_price: @service.air_price, destination_id: @service.destination_id, national: @service.national, other: @service.other, sea_price: @service.sea_price, shipper_id: @service.shipper_id }
     assert_redirected_to service_path(assigns(:service))
   end
 

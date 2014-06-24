@@ -1,8 +1,8 @@
 class CreateServices < ActiveRecord::Migration
   def change
     create_table :services do |t|
-      t.references :dest_id, index: true
-      t.references :shipco_id, index: true
+      t.references :destination, index: true
+      t.references :shipco, index: true
       t.decimal :air_price
       t.decimal :sea_price
       t.boolean :national

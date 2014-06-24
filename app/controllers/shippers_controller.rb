@@ -69,6 +69,6 @@ class ShippersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipper_params
-      params.require(:shipper).permit(:shipco, :addr1, :add2, :city, :zip, :area, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :services_id, :oth_aes, :oth_ins, :oth_brok, :oth_impo, :inventory, :oth_pur, :oth_repa, :oth_ware, :pay_cash, :pay_chk, :pay_debCrd, :paypal, :phon1, :phon2, :pers1, :pers2, :long, :altitud, :email, :other)
+      params.require(:shipper).permit(:shipco, :addr1, :add2, :city, :zip, :area, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :oth_aes, :oth_ins, :oth_brok, :oth_impo, :inventory, :oth_pur, :oth_repa, :oth_ware, :pay_cash, :pay_chk, :pay_debCrd, :paypal, :phon1, :phon2, :pers1, :pers2, :long, :altitud, :email, :other)
     end
 end

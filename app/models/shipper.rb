@@ -1,3 +1,4 @@
 class Shipper < ActiveRecord::Base
-  belongs_to :services
+	has_many :services
+	has_many :destinations
 end

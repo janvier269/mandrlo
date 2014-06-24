@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Dest:</strong>
-  <%= @service.dest_id %>
+  <strong>Destination:</strong>
+  <%= @service.destination_id %>
 </p>
 
 <p>
-  <strong>Shipco:</strong>
-  <%= @service.shipco_id %>
+  <strong>Ship Company:</strong>
+  <%= @service.shipper_id %>
 </p>
 
 <p>
-  <strong>Air price:</strong>
+  <strong>Air LB/price:</strong>
   <%= @service.air_price %>
 </p>
 
 <p>
-  <strong>Sea price:</strong>
+  <strong>Sea SqFt/price:</strong>
   <%= @service.sea_price %>
 </p>
 
 <p>
-  <strong>National:</strong>
+  <strong>National?</strong>
   <%= @service.national %>
 </p>
 
@@ -32,3 +32,6 @@
 
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>
+<p>
+  <%= link_to 'New Service', new_service_path %>
+</p>

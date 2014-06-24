@@ -11,9 +11,12 @@
 </p>
 
 <p>
-  <strong>Airport:</strong>
+  <strong>Airport Code:</strong>
   <%= @destination.airport %>
 </p>
 
 <%= link_to 'Edit', edit_destination_path(@destination) %> |
 <%= link_to 'Back', destinations_path %>
+<p>
+<%= link_to 'New Destination', new_destination_path %>
+</p>

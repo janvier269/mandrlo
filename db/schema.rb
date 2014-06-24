@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20140624162127) do
   end
 
   create_table "services", force: true do |t|
-    t.integer  "dest_id_id"
-    t.integer  "shipco_id_id"
+    t.integer  "destination_id"
+    t.integer  "shipper_id"
     t.decimal  "air_price"
     t.decimal  "sea_price"
     t.boolean  "national"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20140624162127) do
     t.datetime "updated_at"
   end
 
-  add_index "services", ["dest_id_id"], name: "index_services_on_dest_id_id", using: :btree
-  add_index "services", ["shipco_id_id"], name: "index_services_on_shipco_id_id", using: :btree
+  add_index "services", ["destination_id"], name: "index_services_on_destination_id", using: :btree
+  add_index "services", ["shipper_id"], name: "index_services_on_shipper_id", using: :btree
 
   create_table "shippers", force: true do |t|
     t.string   "shipco"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20140624162127) do
     t.string   "thursday"
     t.string   "friday"
     t.string   "saturday"
-    t.integer  "services_id"
     t.boolean  "oth_aes"
     t.boolean  "oth_ins"
     t.boolean  "oth_brok"
@@ -64,8 +63,8 @@ ActiveRecord::Schema.define(version: 20140624162127) do
     t.boolean  "pay_chk"
     t.boolean  "pay_debCrd"
     t.boolean  "paypal"
-    t.integer  "phon1"
-    t.integer  "phon2"
+    t.string   "phon1"
+    t.string   "phon2"
     t.string   "pers1"
     t.string   "pers2"
     t.string   "long"
@@ -75,7 +74,5 @@ ActiveRecord::Schema.define(version: 20140624162127) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "shippers", ["services_id"], name: "index_shippers_on_services_id", using: :btree
 
 end

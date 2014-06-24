@@ -1,6 +1,6 @@
 class Service < ActiveRecord::Base
-  belongs_to :dest_id
-  belongs_to :shipco_id
+  belongs_to :destinations
+  belongs_to :shippers
 
   def self.search seach_term
   	return scope unless search_term.present?

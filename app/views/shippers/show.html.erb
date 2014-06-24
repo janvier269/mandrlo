@@ -61,11 +61,6 @@
 </p>
 
 <p>
-  <strong>Services:</strong>
-  <%= @shipper.services %>
-</p>
-
-<p>
   <strong>Oth aes:</strong>
   <%= @shipper.oth_aes %>
 </p>
@@ -167,3 +162,6 @@
 
 <%= link_to 'Edit', edit_shipper_path(@shipper) %> |
 <%= link_to 'Back', shippers_path %>
+<p>
+<%= link_to 'New Shipper', new_shipper_path %>
+</p>
