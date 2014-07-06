@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140624162127) do
   create_table "services", force: true do |t|
     t.integer  "destination_id"
     t.integer  "shipper_id"
-    t.decimal  "air_price"
+    t.decimal   "air_price"
     t.decimal  "sea_price"
     t.boolean  "national"
     t.boolean  "other"

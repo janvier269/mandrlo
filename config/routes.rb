@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  get 'index_page/searchIndex'
+
+  
+  get 'index_page/indexResults'
+  post 'index_page/indexResults'
+
   resources :destinations
 
   resources :services
 
   resources :shippers
+
+  #post 'index_page/indexResults'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

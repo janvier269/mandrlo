@@ -16,8 +16,8 @@
   <tbody>
     <% @services.each do |service| %>
       <tr>
-        <td><%= service.destination_id %></td>
-        <td><%= service.shipper_id %></td>
+        <td><%= service.destination.location %></td>
+        <td><%= service.shipper.shipco %></td>
         <td><%= service.air_price %></td>
         <td><%= service.sea_price %></td>
         <td><%= service.national %></td>

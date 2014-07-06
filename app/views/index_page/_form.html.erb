@@ -1,0 +1,34 @@
+
+				<%= form_tag(index_page_indexResults_path, method: "post") do  %>
+					  <div class="container-fluid col-md-9 span9 offset2">
+					  <div class="col-xs-4 col-md-3 data-width=30%"><strong>LOCATION</strong><br />
+					  	<select>
+									<option value="currentLocation">Current</option>
+									<option value="miami">Miami</option>
+							</select>
+						</div>
+
+						<div class="col-xs-1 col-centered"></div>
+
+
+					  <div class="col-xs-4 col-md-3 data-width=30%"> <strong> DESTINATION </strong><br />
+
+					  			<%= select_tag(:destination_name, options_from_collection_for_select(Destination.all, :location, :location)) %>
+						</div>
+
+						<div class="col-xs-1 col-centered"></div>
+
+					  <div class="col-xs-4 col-md-3 ">
+					  	<strong>SERVICE</strong><br />
+					  			
+					  			<%= select_tag(:service_name, options_for_select(['Air', 'Sea', 'Both']))%>
+
+					  
+
+					</div>
+</div>
+<div class="block col-md-9 col-xs-9 "></div>
+				<p></p>	
+					<button type="button" class="btn btn-default btn-xs btn-block"><%= submit_tag "Search" %></button>
+
+				<% end %>

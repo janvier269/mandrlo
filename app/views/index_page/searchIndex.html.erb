@@ -1,0 +1,201 @@
+<div class="container bs-docs-container">
+
+<div class="col-md-9" role="main">
+<div class="navbar navbar-inverse-fixed-top">
+
+<a href="/searchIndex" class="img-responsive">
+
+      <img src="/assets/Mandarlo200Icon.jpg" width="50px" height="50px"  alt="Send it Conveniently!" class="img-responsive"></a>
+
+</div>
+
+<div class="well">This is where my anouncements will be placed</div>
+
+<div class="container-fluid">
+	<div class="row">
+
+				<%= form_tag(index_page_indexResults_path, method: "post") do  %>
+					  
+					  <div class="col-xs-4 col-md-3"><strong>LOCATIONS</strong><br />
+					  	<select>
+									<option value="currentLocation">Current</option>
+									<option value="miami">Miami</option>
+							</select>
+						</div>
+
+					  <div class="col-xs-4 col-md-3"> <strong> DESTINATIONS </strong><br />
+
+					  			<%= select_tag(:destination_name, options_from_collection_for_select(Destination.all, :location, :location)) %>
+						</div>
+
+
+
+					  <div class="col-xs-4 col-md-3">
+					  	<strong>SERVICE</strong><br />
+					  			
+					  			<%= select_tag(:service_name, options_for_select(['Air', 'Sea', 'Both']))%>
+
+					  
+
+					</div>
+
+					
+					<button type="button" class="btn btn-default btn-xs btn-block"><%= submit_tag "Search" %></button>
+
+		<% end %>
+
+
+
+
+	<div class="row-fluid">
+			<div class="col-md-9">
+
+  <div class="bs-example bs-example-tabs">
+    <ul id="myTab" class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#proximity" role="tab" data-toggle="tab">By Proximity</a></li>
+      <li><a href="#price" role="tab" data-toggle="tab">By Price</a></li>
+      <li class="dropdown">
+        <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">Advanced Search <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+					<li><a href="#">Next Flight</a></li>
+					<li><a href="#">Next Shipment</a></li>
+					<li><a href="#">Special Services</a></li>
+					<li><a href="#">Company Name</a></li>
+					<li><a href="#dropdown1" tabindex="-1" role="tab" data-toggle="tab">@fat</a></li>
+          <li><a href="#dropdown2" tabindex="-1" role="tab" data-toggle="tab">@mdo</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade in active" id="proximity">
+    
+
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Miles</th>
+								<th>Time</th>
+								<th>Company</th>
+								<th>Air/Lb.</th>
+								<th>Sea/SqFt.</th>
+								<th>Next Flt</th>
+								<th>Next Sea</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% @services.each do |s| %>
+
+							<tr>
+								<td>MilesR</td>
+								<td>TimeR</td>
+								<td><%= s.shipper.shipco %></td>
+								<td><%= s.air_price %></td>
+								<td><%= s.sea_price %></td>
+								<td>Next FltR</td>
+								<td>Next Ship</td>
+							</tr>
+							<tr>
+									<td><span class="glyphicon glyphicon-phone-alt"></span></td>
+									<td>icon</td>
+									<td colspan="2"><%=s.shipper.addr1 %></td>
+									<td><a href="#" data-toggle="tooltip" title data-origintal-title="Blah, blah, blah">+ Info</a> </td>
+									<td><%=s.shipper.area %></td>
+									<td><a href="#">MAP</a> </td>
+							</tr>
+
+						<% end %>	
+
+
+						</tbody>
+					</table>
+
+      </div>
+      <div class="tab-pane fade" id="price">
+        
+							<table class="table table-bordered table-stripped table-hover">
+
+									<thead>
+										<tr>
+											<th>Air/Lb.</th>
+											<th>Sea/SqFt.</th>
+											<th>Company</th>
+											<th>Proximity</th>
+											<th>Time</th>
+											<th>Next Flt</th>
+											<th>Next Sea</th>
+										</tr>
+									</thead>
+									<tbody>
+									<% @services.each do |s| %>
+
+										<tr>
+											<td><%= s.air_price %></td>
+											<td><%= s.sea_price %></td>
+											<td><%= s.shipper.shipco %></td>
+											<td>Proximity</td>
+											<td>TimeR</td>
+											<td>Next FltR</td>
+											<td>Next Ship</td>
+
+										</tr>
+										<tr>
+											<td>icon</td>
+											<td>icon</td>
+											<td colspan="2"><%=s.shipper.addr1 %></td>
+											<td><a href="#">+ Info</a> </td>
+											<td><%=s.shipper.area %></td>
+											<td><a href="#">MAP</a> </td>
+										</tr>
+											<% end %>	
+										</tbody>
+								</table>
+
+				      </div>
+				      <div class="tab-pane fade" id="dropdown1">
+				        <p>DROPDOWN 1</p>
+				      </div>
+				      <div class="tab-pane fade" id="dropdown2">
+				        <p>DROPDOWN 2</p>
+				      </div>
+				    </div>
+				  </div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+<script>
+	$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
+
+
+
+	</div>
+
+</div>
+</div "main">
+<div class="col-md-3">
+	<div class="bs-docs-sidebar hidden-print hidden-sm affix-bottom" role="complementary" style="top: 58917px;">
+		<ul class="nav bs-docs-sidenav">
+			<li class>Who?</li>
+			<li class>Where?</li>
+			<li class>How?</li>
+			<li class>Why?</li>
+			<li class>What?</li>
+		</ul>
+	</li>
+	</div>
+</div>
+
+</div>
+<!-- end #container -->
+
+
+
+
