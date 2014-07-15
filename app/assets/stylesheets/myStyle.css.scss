@@ -1,14 +1,62 @@
 body {
   background-image: url(/assets/mainBkgrd.jpg);
-  color: #d9daef;
+  color: #d6d8ed;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 11px;
   line-height: 15px;
 }
+.well {
+  font-color: #996666;
+  padding: 3px;
 
-#navbar {
-  background-color: #cccccc
 }
+
+.select_tag.input-lg {
+  height: 46px;
+  line-height: 46px;
+}
+
+.top-banner {
+  background-image: url(/assets/topBarBckGrnd.jpg);
+  color: #5a1d11;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+
+.top{
+  position: absolute;
+  top: 0;
+}
+
+.img-responsive{
+  display: block;
+height: auto;
+max-width: 200%;
+}
+
+#text-img
+{
+    z-index:100;
+    position:absolute;    
+    color:white;
+    font-size:11px;
+    font-weight:bold;
+    left:75px;
+    top:5px;
+}
+#text-img2
+{
+    z-index:100;
+    position:absolute;    
+    color:beige;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:17px;
+    font-weight:bold;
+    right:5px;
+    top:30px;
+}
+
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -35,7 +83,7 @@ a {
 
 div {
   &.field, &.actions {
-    margin-bottom: 7px;
+    margin-bottom: 10px;
   }
 }
 
@@ -70,4 +118,9 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+
+.block {
+   color: #dedede;
 }

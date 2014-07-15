@@ -20,7 +20,9 @@ class Service < ActiveRecord::Base
           ##check location and make loction == coordinated for the location param.
       
       ##end
-      
+
+
+
       if service_name == "Air"
             @services = Service.where("destination_id = ? and air_price > ?", @destination, 0)
       
@@ -32,7 +34,7 @@ class Service < ActiveRecord::Base
             #where destination has both air and sea services
       end
 
-      # how do I do to have Both Services option?
+     
       return @services
 
     end

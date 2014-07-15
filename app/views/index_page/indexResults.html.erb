@@ -1,20 +1,23 @@
 <html>
-<head>
+<head><style> img { float:left; } </style>
 	<title>Mandarlo.com</title>
 </head>
 <body>
 
-
-
 <div class="container-fluid" >
 	<!-- this is the total page container-->
-			<div class="navbar navbar-fixed-top">
+			<div class="top-banner col-md-9 col-xs-9"> 
+					<img src="/assets/Mandarlo200Icon.jpg" width="50px" height="50px" alt="Making Sending Convenient!">
+					<p id="text-img">
+							English | Espanol | Francais | Portugues
+					</p> -->
+					<p id="text-img2">
+						"Making Shipping Convenient!" 
+					</p>
 
-				<a href="/searchIndex" class="img-responsive">
-					<img src="/assets/Mandarlo200Icon.jpg" width="50px" height="50px" alt="Send it Conveniently!" class="img-responsive"></a>
-					<a class="brand" href="index_page/searchIndex">Mandarlo</a>
 			</div>
-<div class="well top-offset30 col-md-9 col-xs-9" >This is where my anouncements will be placed</div>
+
+<div class="well col-md-9 col-xs-9" ><center><strong>As easy as 1. Select where you will ship from, 2. Select where you are shipping to and... 3. Select the type of service you want to use.  Then, review your best options.</strong></center></div>
 	<div class="row-fluid">
 			<div class="col-md-9 col-xs-9">
 
@@ -58,8 +61,8 @@
 							<% @services.each do |s| %>
 
 							<tr>
-								<td>MilesR</td>
-								<td>TimeR</td>
+								<td class="distance">MilesR</td>
+								<td class="duration">TimeR</td>
 								<td><%= s.shipper.shipco %></td>
 								<td><%= s.air_price %></td>
 								<td><%= s.sea_price %></td>
@@ -98,14 +101,20 @@
 										</tr>
 									</thead>
 									<tbody>
+										<script> var shippers = []; </script>
 									<% @services.each do |s| %>
-
+										<script> var s = { 
+											latitude: <%= s.shipper.latitude %>,
+											longitude: <%= s.shipper.longitude %>
+										}
+										shippers.push(s);
+										</script>
 										<tr>
 											<td><%= s.air_price %></td>
 											<td><%= s.sea_price %></td>
 											<td><%= s.shipper.shipco %></td>
-											<td>Proximity</td>
-											<td>TimeR</td>
+											<td class="distance">MilesR</td>
+											<td class="duration">TimeR</td>
 											<td>Next FltR</td>
 											<td>Next Ship</td>
 

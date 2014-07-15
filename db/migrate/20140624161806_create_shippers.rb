@@ -29,8 +29,8 @@ class CreateShippers < ActiveRecord::Migration
       t.string :phon2
       t.string :pers1
       t.string :pers2
-      t.string :long
-      t.string :altitud
+      t.string :longitude
+      t.string :latitude
       t.string :email
       t.string :other
 

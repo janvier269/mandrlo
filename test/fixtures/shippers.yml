@@ -30,8 +30,8 @@ one:
   phon2: 1
   pers1: MyString
   pers2: MyString
-  long: MyString
-  altitud: MyString
+  longitude: MyString
+  latitude: MyString
   email: MyString
   other: MyString
 
@@ -65,7 +65,7 @@ two:
   phon2: 1
   pers1: MyString
   pers2: MyString
-  long: MyString
-  altitud: MyString
+  longitude: MyString
+  latitude: MyString
   email: MyString
   other: MyString

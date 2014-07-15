@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20140624162127) do
 
   create_table "services", force: true do |t|
     t.integer  "destination_id"
-    t.integer  "shipper_id"
-    t.decimal   "air_price"
+    t.integer  "shipco_id"
+    t.decimal  "air_price"
     t.decimal  "sea_price"
     t.boolean  "national"
     t.boolean  "other"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140624162127) do
   end
 
   add_index "services", ["destination_id"], name: "index_services_on_destination_id", using: :btree
-  add_index "services", ["shipper_id"], name: "index_services_on_shipper_id", using: :btree
+  add_index "services", ["shipco_id"], name: "index_services_on_shipco_id", using: :btree
 
   create_table "shippers", force: true do |t|
     t.string   "shipco"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20140624162127) do
     t.string   "phon2"
     t.string   "pers1"
     t.string   "pers2"
-    t.string   "long"
-    t.string   "altitud"
+    t.string   "longitude"
+    t.string   "latitude"
     t.string   "email"
     t.string   "other"
     t.datetime "created_at"

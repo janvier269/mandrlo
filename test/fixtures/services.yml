@@ -2,7 +2,7 @@
 
 one:
   destination_id: 
-  shipper_id: 
+  shipco_id: 
   air_price: 9.99
   sea_price: 9.99
   national: false
@@ -10,7 +10,7 @@ one:
 
 two:
   destination_id: 
-  shipper_id: 
+  shipco_id: 
   air_price: 9.99
   sea_price: 9.99
   national: false

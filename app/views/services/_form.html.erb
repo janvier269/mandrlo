@@ -17,8 +17,8 @@
     <%= f.select :destination_id, Destination.all.collect { |d| [ d.location, d.id ] }, include_blank: true %>
   </div>
   <div class="field">
-    <%= f.label :shipper_id, "Shipper ID" %><br>
-  <%= f.select :shipper_id, Shipper.all.collect { |s| [ s.shipco, s.id ] }, include_blank: true %>
+    <%= f.label :shipco_id, "Shipper ID" %><br>
+  <%= f.select :shipco_id, Shipper.all.collect { |s| [ s.shipco, s.id ] }, include_blank: true %>
   </div>
   <div class="field">
     <%= f.label :air_price, "Air Price per Lb." %><br>
