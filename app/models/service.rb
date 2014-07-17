@@ -1,7 +1,7 @@
 class Service < ActiveRecord::Base
 
   belongs_to :destination
-  belongs_to :shipper
+  belongs_to :shipper, foreign_key: "shipco_id"
 
   def self.search(destination_name, service_name)  #neeed to add a loction parameter
 
@@ -21,6 +21,7 @@ class Service < ActiveRecord::Base
       
       ##end
 
+   
 
 
       if service_name == "Air"
@@ -33,6 +34,7 @@ class Service < ActiveRecord::Base
             @services = Service.where("destination_id = ? and (air_price > ? OR sea_price > ?)", @destination, 0, 0)
             #where destination has both air and sea services
       end
+
 
      
       return @services
