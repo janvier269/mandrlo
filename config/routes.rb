@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :locations
+
   get 'index_page/searchIndex'
 
   
