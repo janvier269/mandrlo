@@ -15,10 +15,10 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-$(document).on('ready', function(){
+//$(document).on('ready', function(){
 	///...
 
-})
+//})
 
 $(document).ready(function() {
 	//telling the server that this is where i'm at
@@ -57,22 +57,23 @@ $(document).ready(function() {
 				//console.log(coords.longitude);
 				var origin      = new google.maps.LatLng(coords.latitude, coords.longitude);
 
-	for (var i=0; i<shippers.length; i++) {
+				for (var i=0; i<shippers.length; i++) {
 		//pull shipper object out of array
 		var shipper=shippers[i];
 		//avoids async problem below
 		var row = i;
 
-				var destination = new google.maps.LatLng(shipper.latitude, shipper.longitude);
-				var request = {
-					origin:      origin,
-					destination: destination,
-					travelMode:  google.maps.TravelMode.DRIVING
-				};
+		var destination = new google.maps.LatLng(shipper.latitude, shipper.longitude);
+		var request = {
+			origin:      origin,
+			destination: destination,
+			travelMode:  google.maps.TravelMode.DRIVING
+		};
 				// get the Google directions
 				directionsService.route(request, function(response, status) {
 					if (status == google.maps.DirectionsStatus.OK) {
 						//directionsDisplay.setDirections(response);
+						console.log(response.routes);
 						var leg = response.routes[0].legs[0];
 						console.log(leg.distance.text);
 						$('.distance').eq(row).text(leg.distance.text);
@@ -81,13 +82,13 @@ $(document).ready(function() {
 					}
 				});
 
-	}
-
 			}
-		);
-	}
 
-	calcRoute();
+		}
+		);
+}
+
+calcRoute();
 
 	// var handler = Gmaps.build('Google');
 	// handler.buildMap({ internal: {id: 'directions'}}, function(){

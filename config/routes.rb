@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :locations
+  
 
   get 'index_page/searchIndex'
 
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :shippers
 
+  resources :locations
+  
   #post 'index_page/indexResults'
 
   # The priority is based upon order of creation: first created -> highest priority.

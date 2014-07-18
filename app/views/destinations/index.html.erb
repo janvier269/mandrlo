@@ -16,6 +16,9 @@
         <td><%= destination.section %></td>
         <td><%= destination.location %></td>
         <td><%= destination.airport %></td>
+        <% if destination.shipper_id %>
+        <td><%= destination.shipper_id %></td>
+        <% end %>
         <td><%= link_to 'Show', destination %></td>
         <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
         <td><%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>

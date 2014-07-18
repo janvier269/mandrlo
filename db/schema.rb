@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717172933) do
+ActiveRecord::Schema.define(version: 20140717230411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 20140717172933) do
     t.string   "airport"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "shipper_id"
   end
+
+  add_index "destinations", ["shipper_id"], name: "index_destinations_on_shipper_id", using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "area"

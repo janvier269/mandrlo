@@ -4,7 +4,11 @@
 					  <div class="col-xs-4 col-md-3 offset2"><strong>LOCATION</strong><br />
 					  	
 								
-									<%= select_tag(:area, options_from_collection_for_select(Location.all, :area, :area)) %>
+									<%= select_tag(
+										:area, 
+										options_from_collection_for_select(@locations, :area, :area, (@selectedLocation.area rescue nil)), 
+										:prompt => "Current" ) %>
+									<% # the word Current can be replaced without effecting anything %>
 							
 						</div>
 

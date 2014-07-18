@@ -1,7 +1,7 @@
 <%= form_for(@shipper) do |f| %>
   <% if @shipper.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@shipper.errors.count, "error") %> prohibited this shipper from being saved:</h2>
+      <h2><%= pluralize(@shipper.errors.count, "error") %> prohibited tdis shipper from being saved:</h2>
 
       <ul>
       <% @shipper.errors.full_messages.each do |message| %>
@@ -10,136 +10,190 @@
       </ul>
     </div>
   <% end %>
-
+ <table class="table table-bordered table-striped table-hover table-responsive">
+  <tbody>
+  <tr><center><strong> Basic Business Info </strong></center></tr>
+  <tr>
+    <td>
   <div class="field">
     <%= f.label :shipco, "Company Name" %><br>
     <%= f.text_field :shipco %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :addr1, "Address 1" %><br>
     <%= f.text_field :addr1 %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :add2, "Additional Address" %><br>
     <%= f.text_field :add2 %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :city %><br>
     <%= f.text_field :city %>
-  </div>
+  </div></td>
   <div class="field">
     <%= f.label :zip, "Zip Code" %><br>
     <%= f.number_field :zip %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :area, "City Area" %><br>
     <%= f.text_field :area %>
-  </div>
+  </div></td>
+</tr>
+<tr><center><strong>Work Schedule</strong></center></tr>
+
+<tr>
+  <td>
   <div class="field">
     <%= f.label :monday %><br>
     <%= f.text_field :monday %>
-  </div>
+  </div></td>
+  <tr>
   <div class="field">
     <%= f.label :tuesday %><br>
     <%= f.text_field :tuesday %>
-  </div>
+  </div></tr>
+  <tr>
   <div class="field">
     <%= f.label :wednesday %><br>
     <%= f.text_field :wednesday %>
-  </div>
+  </div></tr>
+  <tr>
   <div class="field">
     <%= f.label :thursday %><br>
     <%= f.text_field :thursday %>
-  </div>
+  </div></td>
+  <tr>
   <div class="field">
     <%= f.label :friday %><br>
     <%= f.text_field :friday %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :saturday %><br>
     <%= f.text_field :saturday %>
-  </div>
+  </div></td>
+  <td></tr>
+    <tr><strong><center>Additional Services</center></strong></tr>
+    <tr>
+      <td>
   <div class="field">
     <%= f.label :oth_aes, "AES Service" %><br>
     <%= f.check_box :oth_aes %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :oth_ins, "Cargo Insurance" %><br>
     <%= f.check_box :oth_ins %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :oth_brok, "Brokage Service" %><br>
     <%= f.check_box :oth_brok %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :oth_impo, "Importations From" %><br>
     <%= f.text_field :oth_impo %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :inventory %><br>
     <%= f.check_box :inventory %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :oth_pur, "Intl. Purchasing" %><br>
     <%= f.check_box :oth_pur %>
-  </div>
+  </div></td></tr>
+  
+
+  <tr>
+    <td>
   <div class="field">
     <%= f.label :oth_repa, "Repackaging" %><br>
     <%= f.check_box :oth_repa %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :oth_ware, "Warehousing" %><br>
     <%= f.check_box :oth_ware %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :pay_cash, "Accepts Cash" %><br>
     <%= f.check_box :pay_cash %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :pay_chk, "Accepts Checks" %><br>
     <%= f.check_box :pay_chk %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :pay_debCrd, "Accepts Debit/Credit Cards" %><br>
     <%= f.check_box :pay_debCrd %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :paypal, "Accepts Paypal" %><br>
     <%= f.check_box :paypal %>
-  </div>
+  </div></td></tr>
+
+  <tr><center><strong>Contact Information</strong></center></tr>
+  <td>
   <div class="field">
     <%= f.label :phon1, "Phone No." %><br>
     <%= f.telephone_field :phon1 %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :phon2, "Cell No." %><br>
     <%= f.telephone_field :phon2 %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :pers1, "Contact Person" %><br>
     <%= f.text_field :pers1 %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :pers2, "Contact Person 2" %><br>
     <%= f.text_field :pers2 %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude, "Longitude" %><br>
-    <%= f.text_field :longitude %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude, "Latitude" %><br>
-    <%= f.text_field :latitude %>
-  </div>
+  </div></td>
+<td>
   <div class="field">
     <%= f.label :email, "Company Email" %><br>
     <%= f.email_field :email %>
-  </div>
+  </div></td>
+  <td>
   <div class="field">
     <%= f.label :other, "Skype, Watsup, etc." %><br>
     <%= f.text_field :other %>
-  </div>
+  </div></td></tr>
+
+<tr><center><strong> Coordinates </strong></center></tr>
+<tr>
+  <td>
+  <div class="field">
+    <%= f.label :longitude, "Longitude" %><br>
+    <%= f.text_field :longitude %>
+  </div></td>
+  <td>
+  <div class="field">
+    <%= f.label :latitude, "Latitude" %><br>
+    <%= f.text_field :latitude %>
+  </div></td></tr>
+
+<tr><center>
   <div class="actions">
     <%= f.submit %>
-  </div>
-<% end %>
+  </div></center></tr.
+
+
+<% end %></tbody>
+</table>
