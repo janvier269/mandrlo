@@ -10,15 +10,19 @@
       </ul>
     </div>
   <% end %>
- <table class="table table-bordered table-striped table-hover table-responsive">
-  <tbody>
+ <table class="table table-bordered table-striped table-responsive">
+  <thead>
   <tr><center><strong> Basic Business Info </strong></center></tr>
+
+  </thead>
+  <tbody>
   <tr>
     <td>
-  <div class="field">
+    <div class="field">
     <%= f.label :shipco, "Company Name" %><br>
     <%= f.text_field :shipco %>
-  </div></td>
+    </div>
+  </td>
   <td>
   <div class="field">
     <%= f.label :addr1, "Address 1" %><br>
@@ -48,36 +52,43 @@
 
 <tr>
   <td>
-  <div class="field">
-    <%= f.label :monday %><br>
-    <%= f.text_field :monday %>
-  </div></td>
-  <tr>
-  <div class="field">
-    <%= f.label :tuesday %><br>
-    <%= f.text_field :tuesday %>
-  </div></tr>
-  <tr>
-  <div class="field">
-    <%= f.label :wednesday %><br>
-    <%= f.text_field :wednesday %>
-  </div></tr>
-  <tr>
-  <div class="field">
-    <%= f.label :thursday %><br>
-    <%= f.text_field :thursday %>
-  </div></td>
-  <tr>
-  <div class="field">
-    <%= f.label :friday %><br>
-    <%= f.text_field :friday %>
-  </div></td>
+    <div class="field">
+      <%= f.label :monday %><br>
+      <%= f.text_field :monday %>
+    </div>
+  </td>
   <td>
-  <div class="field">
-    <%= f.label :saturday %><br>
-    <%= f.text_field :saturday %>
-  </div></td>
-  <td></tr>
+    <div class="field">
+      <%= f.label :tuesday %><br>
+      <%= f.text_field :tuesday %>
+    </div>
+  </td>
+ 
+  <td>
+    <div class="field">
+      <%= f.label :wednesday %><br>
+      <%= f.text_field :wednesday %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+      <%= f.label :thursday %><br>
+      <%= f.text_field :thursday %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+      <%= f.label :friday %><br>
+      <%= f.text_field :friday %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+      <%= f.label :saturday %><br>
+      <%= f.text_field :saturday %>
+    </div>
+  </td>
+  </tr>
     <tr><strong><center>Additional Services</center></strong></tr>
     <tr>
       <td>
@@ -109,7 +120,8 @@
   <div class="field">
     <%= f.label :oth_pur, "Intl. Purchasing" %><br>
     <%= f.check_box :oth_pur %>
-  </div></td></tr>
+  </div></td>
+</tr>
   
 
   <tr>
@@ -187,13 +199,15 @@
   <div class="field">
     <%= f.label :latitude, "Latitude" %><br>
     <%= f.text_field :latitude %>
-  </div></td></tr>
+  </div></td>
+</tr>
 
 <tr><center>
   <div class="actions">
     <%= f.submit %>
-  </div></center></tr.
+  </div></center></tr>
 
+  </tbody>
 
-<% end %></tbody>
+<% end %>
 </table>

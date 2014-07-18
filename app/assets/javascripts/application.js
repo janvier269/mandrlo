@@ -21,16 +21,6 @@
 //})
 
 $(document).ready(function() {
-	//telling the server that this is where i'm at
-			// $.post( '/api/currentLoc', pos, {
-			// 	success: function(resp){
-			// 		// handle server response
-			// 	},
-			// 	error: function(err){
-			// 		//handle error
-			// 	}
-			// })
-		//});
 
 	// add loc info to select box
 	navigator.geolocation.getCurrentPosition( 
@@ -58,42 +48,41 @@ $(document).ready(function() {
 				var origin      = new google.maps.LatLng(coords.latitude, coords.longitude);
 
 				for (var i=0; i<shippers.length; i++) {
-		//pull shipper object out of array
-		var shipper=shippers[i];
-		//avoids async problem below
-		var row = i;
+					//pull shipper object out of array
+					var shipper=shippers[i];
 
-		var destination = new google.maps.LatLng(shipper.latitude, shipper.longitude);
-		var request = {
-			origin:      origin,
-			destination: destination,
-			travelMode:  google.maps.TravelMode.DRIVING
-		};
-				// get the Google directions
-				directionsService.route(request, function(response, status) {
-					if (status == google.maps.DirectionsStatus.OK) {
-						//directionsDisplay.setDirections(response);
-						console.log(response.routes);
-						var leg = response.routes[0].legs[0];
-						console.log(leg.distance.text);
-						$('.distance').eq(row).text(leg.distance.text);
-						console.log(leg.duration.text);
-						$('.duration').eq(row).text(leg.duration.text);
-					}
-				});
+					var destination = new google.maps.LatLng(shipper.latitude, shipper.longitude);
+					var request = {
+						origin:      origin,
+						destination: destination,
+						travelMode:  google.maps.TravelMode.DRIVING
+					};
 
+					// get the Google directions
+					var closure = function(row) {
+						directionsService.route(request, function(response, status) {
+							if (status == google.maps.DirectionsStatus.OK) {
+								//directionsDisplay.setDirections(response);
+								//console.log(response.routes);
+								var leg = response.routes[0].legs[0];
+								console.log(leg.distance.text);
+								$('.distance').eq(row).text(leg.distance.text);
+								console.log(leg.duration.text);
+								$('.duration').eq(row).text(leg.duration.text);
+								//console.log(row);
+							}
+						});
+					};
+					closure(i);
+				}
 			}
-
-		}
 		);
-}
+	}
 
-calcRoute();
+	calcRoute();
 
 	// var handler = Gmaps.build('Google');
 	// handler.buildMap({ internal: {id: 'directions'}}, function(){
 	// 	directionsDisplay.setMap(handler.getMap());
 	// });
-
-	////
 });

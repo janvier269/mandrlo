@@ -6,15 +6,16 @@ class IndexPageController < ApplicationController
 
 
 	def indexResults
-
+		# form selections
 		@selectedLocation = Location.find_by(:area => params[:area])
-		@services = Service.search(params[:destination_name], params[:service_name], @selectedLocation)
-		p 'services'
-		p @services
-		@locations = Location.all.order(:area)
-    # @services.each do |service|
-    #         service.shipper = Shipper.find_by_id(service.shipco_id)
-    # end
+		@selectedDestination = Destination.find_by(:location => params[:location])
 
+		# search for services
+		@services = Service.search(@selectedDestination, params[:service_name], @selectedLocation)
+
+		# select tag options
+		@locations = Location.all.order(:area)
+		@destinations = Destination.all
+   
 	end	
 end

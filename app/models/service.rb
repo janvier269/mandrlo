@@ -3,25 +3,18 @@ class Service < ActiveRecord::Base
   belongs_to :destination
   belongs_to :shipper, foreign_key: "shipco_id"
 
-  def self.search(destination_name, service_name, location)  #neeed to add a loction parameter
+  def self.search(destination, service_name, location)
+      # search for all services that:
+      #  go to destination
+      #  are located in location
+      #  and ship by service_name (Air, Sea, or Both)
 
-      destination = Destination.find_by_location(destination_name)
-      # so now, @service will send a search to Service model to find a match between destinations: 
-      # the results of @destination
-      #@services = Service.where(destination: @destination)
+      services = Service.where('destination_id = ?', destination)
 
+      unless location.nil?
+        services = services.joins(:shipper).where('area = ?', location.area)
+      end
 
-       # @location 
-      ## need to do if statments for the location parameter
-      ## if location = "Current"
-       ###  get from API
-     ## else
-          ##check location and make loction == coordinated for the location param.
-      
-      ##end
-
-      services = Service.joins(:shipper)
-        .where('destination_id = ? and area = ?', destination, location.area)
       if service_name == "Air"
             services = services.where("air_price > ?", 0)
       
@@ -29,14 +22,10 @@ class Service < ActiveRecord::Base
             services = services.where("sea_price > ?", 0)
       
       elsif service_name == "Both"
-            services = services.where("(air_price > ? OR sea_price > ?)", 0, 0)
             #where destination has both air and sea services
+            services = services.where("(air_price > ? OR sea_price > ?)", 0, 0)
       end
 
-
-     
       services
-
     end
-  
   end 
